@@ -16,6 +16,7 @@ const App = () => {
       setName("om");
       data = "God";
       console.log("1");
+      console.warn("2");
   }
 
   
