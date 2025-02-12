@@ -1,57 +1,35 @@
 import { Text, View, Button, Alert } from 'react-native';
 import React, { Component ,useState} from 'react';
 import Companydata from './component/Companydata';
+const App = () =>{
+  const [name,setName] = useState("Om")
 
-const App = () => {
-  
-  
-  const fruit = (val :number) => {
-    console.log("Value:", val); // Try this
-    
-  };
-
-  let data = "Box";
-  const[name,setName] = useState("Boss");
-  function testname() {
-      setName("om");
-      data = "God";
-      console.log("1");
-      console.warn("2");
-  }
-
-  
-    return (
-      <View style={{ backgroundColor: '#212121', height: '100%', padding: 20 }}>
-        <Text style={{ fontSize: 30, color: '#ffffff', marginBottom: 10 }}>
-          {name}
+  return(
+      <View>
+        <Text style={{fontSize:30}}>
+          Props in RN
         </Text>
-
-        <Userdata />
-
-        <Button title="Click Me" onPress={() => Alert.alert('Button Pressed')} />
-        
-        <Userdata />
-        
-        <Button title="Click Me" onPress={() => testname()} />
-
-        <Companydata /> 
+        <Button title='Press me' onPress={()=>setName("peter")}/>
+        <User name ={name} age = {20}/>
       </View>
-    );
-  
-}
-
-// Functional Component
-const Userdata = () => {
-  return (
-    <View style={{ marginVertical: 10 }}>
-      <Text style={{ fontSize: 20, color: '#ffffff' }}>
-        Name: Om Saraswat
-      </Text>
-      <Text style={{ fontSize: 20, color: '#ffffff' }}>
-        Age: 29
-      </Text>  
-    </View>
   );
 };
 
+interface UserProps {
+  name: string;
+  age: number;
+}
+
+const User  = (props: UserProps)=>{
+    return(  
+      <View>
+        <Text style = {{fontSize:30}}>
+            Name : {props.name}
+        </Text>
+        <Text style = {{fontSize:30}}>
+            Age: {props.age}
+        </Text>
+      </View>
+    ); 
+};
 export default App;
