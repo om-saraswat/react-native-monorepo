@@ -1,27 +1,21 @@
-Understanding State in React Native
+# Understanding State in React Native
 
-Introduction to State
-
+## Introduction to State
 State is a fundamental concept in React and React Native that allows components to manage and respond to dynamic data. Unlike props, which are immutable, state enables a component to track and update information over time.
 
-What is State?
+### What is State?
+- State represents mutable data that a component can manage internally.
+- Changes in state trigger re-renders, updating the UI automatically.
+- State is local to the component where it is declared.
+- It helps manage dynamic content and user interactions.
 
-State represents mutable data that a component can manage internally.
+## How State Works
+State is typically managed using the `useState` hook in functional components or `this.state` in class components.
 
-Changes in state trigger re-renders, updating the UI automatically.
-
-State is local to the component where it is declared.
-
-It helps manage dynamic content and user interactions.
-
-How State Works
-
-State is typically managed using the useState hook in functional components or this.state in class components.
-
-Example Usage of State
-
+### Example Usage of State
 Let's consider a simple example where a button click updates a state variable.
 
+```jsx
 import { Text, View, Button } from 'react-native';
 import React, { useState } from 'react';
 
@@ -37,52 +31,39 @@ const App = () => {
 };
 
 export default App;
+```
 
-Explanation:
+### Explanation:
+1. The `App` component initializes a state variable `count` with an initial value of `0`.
+2. The `setCount` function updates the `count` value when the button is pressed.
+3. Every state update causes the component to re-render, reflecting the new value on the UI.
 
-The App component initializes a state variable count with an initial value of 0.
-
-The setCount function updates the count value when the button is pressed.
-
-Every state update causes the component to re-render, reflecting the new value on the UI.
-
-Different Types of State
-
+## Different Types of State
 State can be categorized into different types depending on how it is managed.
 
-1. Local State
+### 1. Local State
+- State that exists only within a specific component.
+- Example: Managing a form input, toggling UI elements.
 
-State that exists only within a specific component.
+### 2. Global State
+- State shared across multiple components.
+- Managed using tools like Context API, Redux, or React Query.
 
-Example: Managing a form input, toggling UI elements.
+### 3. Server State
+- Data fetched from an API that needs to be stored and updated.
+- Often managed using libraries like React Query or SWR.
 
-2. Global State
+### 4. URL State
+- State that exists in the URL, such as query parameters.
+- Useful for filtering or pagination.
 
-State shared across multiple components.
+## Key Points about State
+- State is mutable and can be changed using `setState` or `useState`.
+- State updates trigger re-renders, updating the UI dynamically.
+- State is local to the component unless lifted or managed globally.
+- Proper state management improves performance and user experience.
 
-Managed using tools like Context API, Redux, or React Query.
 
-3. Server State
-
-Data fetched from an API that needs to be stored and updated.
-
-Often managed using libraries like React Query or SWR.
-
-4. URL State
-
-State that exists in the URL, such as query parameters.
-
-Useful for filtering or pagination.
-
-Key Points about State
-
-State is mutable and can be changed using setState or useState.
-
-State updates trigger re-renders, updating the UI dynamically.
-
-State is local to the component unless lifted or managed globally.
-
-Proper state management improves performance and user experience.
 
 
 # Understanding Props in React Native
