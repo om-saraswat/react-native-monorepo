@@ -1,35 +1,29 @@
-import { Text, View, Button, Alert } from 'react-native';
+import { Text, View, Button, Alert, StyleSheet } from 'react-native';
 import React, { Component ,useState} from 'react';
 import Companydata from './component/Companydata';
-const App = () =>{
-  const [name,setName] = useState("Om")
-
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import styles from './styles';
+const App = () => {
+  
   return(
       <View>
-        <Text style={{fontSize:30}}>
-          Props in RN
+        <Text style = {styles.textbox}> 
+          Style in React-Native
         </Text>
-        <Button title='Press me' onPress={()=>setName("peter")}/>
-        <User name ={name} age = {20}/>
+        <Text style = {styles.textbox}>
+          Style in React-Native
+        </Text>
+        <Text style = {styles.textbox}>
+          Style in React-Native
+        </Text>
+        <Text style = {styles.textbox}>
+          Style in React-Native
+        </Text>
       </View>
   );
 };
 
-interface UserProps {
-  name: string;
-  age: number;
-}
 
-const User  = (props: UserProps)=>{
-    return(  
-      <View>
-        <Text style = {{fontSize:30}}>
-            Name : {props.name}
-        </Text>
-        <Text style = {{fontSize:30}}>
-            Age: {props.age}
-        </Text>
-      </View>
-    ); 
-};
+
+
 export default App;
